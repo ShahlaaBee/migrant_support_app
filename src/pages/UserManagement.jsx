@@ -37,7 +37,7 @@ const UserManagement = () => {
   const handlePromote = async (id) => {
     try {
       const token = localStorage.getItem('token')
-      const res = await fetch(`http://localhost:3000/api/users/${id}/promote`, {
+      const res = await fetch(`https://misos.onrender.com/api/users/${id}/promote`, {
         method: 'PUT',
         headers: { Authorization: `Bearer ${token}` }
       })
