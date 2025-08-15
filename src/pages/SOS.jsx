@@ -57,25 +57,28 @@ const SOS = () => {
 
   useEffect(() => {
     if (showChatbot) {
-   
-      const script1 = document.createElement('script');
-      script1.src = 'https://cdn.botpress.cloud/webchat/v3.2/inject.js';
-      script1.defer = true;
+
+      const script1 = document.createElement('script')
+      script1.src = 'https://cdn.botpress.cloud/webchat/v3.2/inject.js'
+      script1.async = false
+      script1.onload = () => {
+
+        const script2 = document.createElement('script');
+        script2.src = 'https://files.bpcontent.cloud/2025/08/11/14/20250811143403-5T1Z1B52.js';
+        script2.async = false;
+        document.body.appendChild(script2);
+
+        script2.cleanup = () => document.body.removeChild(script2);
+      };
       document.body.appendChild(script1);
-
-
-      const script2 = document.createElement('script');
-      script2.src = 'https://files.bpcontent.cloud/2025/08/11/14/20250811143403-5T1Z1B52.js';
-      script2.defer = true;
-      document.body.appendChild(script2);
-
-   
       return () => {
         document.body.removeChild(script1);
-        document.body.removeChild(script2);
+
+        const scripts = document.querySelectorAll('script[src*="20250811143403-5T1Z1B52.js"]');
+        scripts.forEach(s => s.parentNode.removeChild(s));
       };
     }
-  }, [showChatbot]);
+  }, [showChatbot])
 
   return (
     <div>
