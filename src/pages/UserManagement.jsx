@@ -9,7 +9,7 @@ const UserManagement = () => {
     const fetchUsers = async () => {
       try {
         const token = localStorage.getItem('token')
-        const res = await fetch('http://localhost:3000/api/users', {
+        const res = await fetch('https://misos.onrender.com/api/users', {
           headers: { Authorization: `Bearer ${token}` }
         })
 
