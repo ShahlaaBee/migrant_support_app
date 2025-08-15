@@ -30,7 +30,6 @@ const SOS = () => {
           const errorData = await res.json()
           errorMsg = errorData.msg || JSON.stringify(errorData)
         } catch {
-          errorMsg = await res.text()
         }
         throw new Error(errorMsg)
       }
@@ -53,7 +52,6 @@ const SOS = () => {
     setShowChatbot(false)
     logSOS('hotline')
   }
-
 
   useEffect(() => {
     if (showChatbot) {
@@ -100,7 +98,6 @@ const SOS = () => {
       {showChatbot && (
         <div style={{ border: '1px solid #ccc', padding: '1em', marginTop: '1em' }}>
           <p>Connecting you to MiSOS Assistant...</p>
-
         </div>
       )}
       {message && <p>{message}</p>}

@@ -24,7 +24,7 @@ const Register = ({ onRegister }) => {
           const errorData = await res.json()
           errorMsg = errorData.msg || JSON.stringify(errorData)
         } catch {
-          errorMsg = await res.text()
+          // Do not attempt res.text() here!
         }
         throw new Error(errorMsg)
       }

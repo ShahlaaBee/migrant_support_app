@@ -19,14 +19,13 @@ const Login = ({ onLogin }) => {
           const errorData = await res.json()
           errorMsg = errorData.msg || JSON.stringify(errorData)
         } catch {
-          errorMsg = await res.text()
+          // Do not attempt res.text() here!
         }
         throw new Error(errorMsg)
       }
       const data = await res.json()
       localStorage.setItem('token', data.token)
       onLogin && onLogin(data.user)
- 
       navigate('/')
     } catch (err) {
       alert(err.message)
