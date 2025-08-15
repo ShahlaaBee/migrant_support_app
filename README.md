@@ -29,7 +29,9 @@ Moving to a new country can be overwhelming. Migrants often struggle to find tru
 
 ## Getting Started
 
-- **Deployed App:** http://misos.surge.sh/
+- **Deployed App:**
+  - frontend: https://misos.surge.sh/
+  - backend: https://misos.onrender.com/
 - **Planning Materials:**
   - Backend github: github.com/ShahlaaBee/migrant_support_app.git
   - Frontend github: github.com/ShahlaaBee/migrant_support_app_back.git
