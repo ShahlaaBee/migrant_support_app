@@ -16,7 +16,7 @@ const SOS = () => {
       return
     }
     try {
-      const res = await fetch('http://localhost:3000/api/sos', {
+      const res = await fetch('https://misos.onrender.com/api/sos', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
