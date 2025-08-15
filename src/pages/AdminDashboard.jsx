@@ -10,7 +10,7 @@ const AdminDashboard = () => {
     const fetchAllSOS = async () => {
       try {
         const token = localStorage.getItem('token')
-        const res = await fetch('http://localhost:3000/api/sos/admin', {
+        const res = await fetch('https://misos.onrender.com/api/sos/admin', {
           headers: { Authorization: `Bearer ${token}` }
         })
         if (!res.ok) throw new Error('Failed to fetch all SOS')
