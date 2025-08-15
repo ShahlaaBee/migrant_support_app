@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 
-const API_URL = "http://localhost:3000/api/support"
+const API_URL = "https://misos.onrender.com/api/support"
 
 const AdminResourceList = () => {
   const [resources, setResources] = useState([])
