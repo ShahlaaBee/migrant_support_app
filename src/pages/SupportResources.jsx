@@ -12,7 +12,7 @@ const Resources = () => {
         const token = localStorage.getItem('token')
         if (token) headers.Authorization = `Bearer ${token}`
 
-        const res = await fetch('http://localhost:3000/api/support', { headers })
+        const res = await fetch('https://misos.onrender.com/api/support', { headers })
 
         if (!res.ok) {
           let errorMsg = 'Failed to fetch resources'
