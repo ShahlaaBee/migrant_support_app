@@ -7,7 +7,7 @@ const Login = ({ onLogin }) => {
 
   const handleLogin = async (formData) => {
     try {
-      const res = await fetch('http://localhost:3000/auth/login', {
+      const res = await fetch('https://misos.onrender.com/auth/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email: formData.email, password: formData.password })
