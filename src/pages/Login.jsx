@@ -19,7 +19,7 @@ const Login = ({ onLogin }) => {
           const errorData = await res.json()
           errorMsg = errorData.msg || JSON.stringify(errorData)
         } catch {
-          // Do not attempt res.text() here!
+
         }
         throw new Error(errorMsg)
       }
